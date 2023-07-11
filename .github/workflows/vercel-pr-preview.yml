@@ -5,11 +5,6 @@ env:
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches-ignore:    
-      - revert-logger
-    paths:
-      - "**.js"
 
 jobs:
   deploy:
