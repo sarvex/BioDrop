@@ -1,6 +1,11 @@
 import remarkGfm from "remark-gfm";
 import remarkPrism from "remark-prism";
 import createMDX from "@next/mdx";
+import analyze from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = analyze({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -48,4 +53,4 @@ const withMDX = createMDX({
   },
 });
 
-export default withMDX(nextConfig);
+export default withBundleAnalyzer(withMDX(nextConfig));

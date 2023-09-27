@@ -57,6 +57,7 @@
     "dev-wsl": "HOST=$(hostname -I | awk '{print $1}') && next dev --hostname ${HOST}",
     "prebuild": "node ./config/schemas/serverSchema.js && node ./config/schemas/clientSchema.js",
     "build": "next build",
+    "analyze": "ANALYZE=true next build",
     "test": "npx playwright test --trace on",
     "start": "next start",
     "lint": "next lint",
@@ -82,6 +83,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.7.3",
     "@babel/core": "^7.22.9",
+    "@next/bundle-analyzer": "^13.5.3",
     "@playwright/test": "^1.36.1",
     "@storybook/addon-a11y": "^7.2.1",
     "@storybook/addon-essentials": "^7.2.1",
